@@ -15,7 +15,8 @@ const screenOptions = {
     right: 0,
     left: 0,
     elevation: 0,
-    height: 60,
+    height: 80,
+    width: '100%',
     background: '#fff'
   }
 }
@@ -31,7 +32,7 @@ export default function App() {
             return ( 
               <View style={{alignItems: 'center', justifyContent: 'center'}}>
                 <Image source={require('./assets/home.png')} style={{height: 30, width:30, tintColor: focused ? 'blue' : '#27272A'}} /> 
-                 <Text style={{fontSize: 12, color: focused ? 'blue' : '#212121'}}>Home</Text> 
+                 <Text style={{fontSize: 12, color: focused ? 'blue' : '#212121', marginBottom: 20,}}>Home</Text> 
               </View>
               )
               }
@@ -45,7 +46,7 @@ export default function App() {
               return ( 
                 <View style={{alignItems: 'center', justifyContent: 'center'}}>
                   <Image source={require('./assets/wallet.png')} style={{height: 30, width:30, tintColor: focused ? 'blue' : '#27272A'}} /> 
-                  <Text style={{fontSize: 12, color: focused ? 'blue' : '#212121'}}>My Cards</Text>
+                  <Text style={{fontSize: 12, color: focused ? 'blue' : '#212121', marginBottom: 20,}}>MyCards</Text>
                 </View>
                 )
                 }
@@ -59,7 +60,7 @@ export default function App() {
               return ( 
                 <View style={{alignItems: 'center', justifyContent: 'center'}}>
                   <Image source={require('./assets/pie-chart.png')} style={{height: 30, width:30, tintColor: focused ? 'blue' : '#27272A'}} /> 
-                  <Text style={{fontSize: 12, color: focused ? 'blue' : '#212121'}}>Statistics</Text>
+                  <Text style={{fontSize: 12, color: focused ? 'blue' : '#212121', marginBottom: 20,}}>Statistics</Text>
                 </View>
                 )
                 }
@@ -73,7 +74,7 @@ export default function App() {
             return ( 
               <View style={{alignItems: 'center', justifyContent: 'center'}}>
                 <Image source={require('./assets/setting.png')} style={{height: 30, width:30, tintColor: focused ? 'blue' : '#27272A'}} /> 
-                <Text style={{fontSize: 12, color: focused ? 'blue' : '#212121'}}>Settings</Text>
+                <Text style={{fontSize: 12, color: focused ? 'blue' : '#212121', marginBottom: 20,}}>Settings</Text>
               </View>
               )
               }
