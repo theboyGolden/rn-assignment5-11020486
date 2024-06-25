@@ -51,50 +51,50 @@ export default function Home() {
                     <Image source={require('../assets/apple.png')} style={{width:25, height:25, }}/>
                 </View>
                 <View style={{width:200}}>
-                    <Text style={{fontWeight:'800', fontSize:18}}>Apple Store</Text>
+                    <Text style={{fontWeight:'700', fontSize:18}}>Apple Store</Text>
                     <Text style={{fontSize: 14, fontSize:16}}>Entertainment</Text>
                 </View>
-                <Text style={{fontWeight:'800', marginTop:10, fontSize:16}}>-$5.99</Text>
+                <Text style={{fontWeight:'700', marginTop:10, fontSize:16}}>-$5.99</Text>
         </View>
             <View style={{flexDirection: 'row', marginTop: 15}}>
                 <View style={{backgroundColor: '#f5f5f5', borderRadius: 60, padding: 10, marginRight: 10,}}>
                     <Image source={require('../assets/spotify.png')} style={{width:25, height:25, }}/>
                 </View>
                 <View style={{width:200}}>
-                    <Text style={{fontWeight:'800', fontSize:18}}>Spotify</Text>
+                    <Text style={{fontWeight:'700', fontSize:18}}>Spotify</Text>
                     <Text style={{fontSize: 14, fontSize:16}}>Music</Text>
                 </View>
-                <Text style={{fontWeight:'800', marginTop:10,fontSize:16}}>-$12.99</Text>
+                <Text style={{fontWeight:'700', marginTop:10,fontSize:16}}>-$12.99</Text>
         </View>
             <View style={{flexDirection: 'row', marginTop: 15}}>
                 <View style={{backgroundColor: '#f5f5f5', borderRadius: 60, padding: 10, marginRight: 10,}}>
                     <Image source={require('../assets/download.png')} style={{width:25, height:25, }}/>
                 </View>
                 <View style={{width:200}}>
-                    <Text style={{fontWeight:'800', fontSize:18}}>Money Transfer</Text>
+                    <Text style={{fontWeight:'700', fontSize:18}}>Money Transfer</Text>
                     <Text style={{fontSize: 14, fontSize:16}}>Transaction</Text>
                 </View>
-                <Text style={{fontWeight:'800', marginTop:10, fontSize:16}}>-$300</Text>
+                <Text style={{fontWeight:'700', marginTop:10, fontSize:16, color:'blue'}}>$300</Text>
         </View>
             <View style={{flexDirection: 'row', marginTop: 15}}>
                 <View style={{backgroundColor: '#f5f5f5', borderRadius: 60, padding: 10, marginRight: 10,}}>
                     <Image source={require('../assets/shopping-cart.png')} style={{width:25, height:25, }}/>
                 </View>
                 <View style={{width:200}}>
-                    <Text style={{fontWeight:'800', fontSize:18}}>Shopping</Text>
+                    <Text style={{fontWeight:'700', fontSize:18}}>Shopping</Text>
                     <Text style={{fontSize: 16,}}>Upkeep</Text>
                 </View>
-                <Text style={{fontWeight:'800', marginTop:10, fontSize:16}}>-$88</Text>
+                <Text style={{fontWeight:'700', marginTop:10, fontSize:16}}>-$88</Text>
         </View>
             <View style={{flexDirection: 'row', marginTop: 15}}>
                 <View style={{backgroundColor: '#f5f5f5', borderRadius: 50, padding: 10, marginRight: 10,}}>
                     <Image source={require('../assets/apple.png')} style={{width:25, height:25, }}/>
                 </View>
                 <View style={{width:200}}>
-                    <Text style={{fontWeight:'800', fontSize:18}}>Scorpion Co.</Text>
+                    <Text style={{fontWeight:'700', fontSize:18}}>Scorpion Co.</Text>
                     <Text style={{fontSize: 16, fontSize:16}}>Scorpio's Share</Text>
                 </View>
-                <Text style={{fontWeight:'800', marginTop:10, fontSize:16}}>-$6.99</Text>
+                <Text style={{fontWeight:'700', marginTop:10, fontSize:16}}>-$6.99</Text>
             </View>
         </View>
     </View>
