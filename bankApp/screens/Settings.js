@@ -49,7 +49,7 @@ export default function Settings() {
 
       <TouchableOpacity onPress={toggleTheme} style={{ marginTop: 50, marginBottom: 250 }}>
        <View style={{flexDirection: 'row'}}>
-        <Text style={{ fontSize: 20, fontWeight: '600', marginRight: 180, color:  isDarkMode ? white : black }}>Theme</Text>
+        <Text style={{ fontSize: 20, fontWeight: '600', marginLeft:-20, marginRight: 230, color:  isDarkMode ? white : black }}>Theme</Text>
         <Image
           source={isDarkMode ? require('../assets/on-button.png') : require('../assets/off-button.png')}
           style={{ height: 40, width: 40, }}
