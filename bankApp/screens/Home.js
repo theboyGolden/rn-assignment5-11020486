@@ -1,107 +1,108 @@
-import { View, Text, Image, StyleSheet } from 'react-native'
-import React from 'react'
+import React from 'react';
+import { View, Text, Image, StyleSheet } from 'react-native';
+import { useTheme } from '../ThemeContext';
 
 export default function Home() {
+  const { theme } = useTheme();
+
   return (
-    <View style={{flex:1, alignItems: "center", justifyContent: "center", backgroundColor: '#fff'}}>
+    <View style={[styles.container, { backgroundColor: theme.background }]}>
       <View style={styles.Header}>
-        <View><Image source={require('../assets/profile.jpg')} style={styles.profilepic}/></View>
-        <View style={styles.welcomeTexts}>
-            <Text style={styles.welcome}>Welcome back,</Text>
-            <Text style={styles.username}>Golden Boy</Text>
+        <View>
+          <Image source={require('../assets/profile.jpg')} style={styles.profilepic} />
         </View>
-        <View style={styles.searchIconView}><Image source={require('../assets/search.png')} style={styles.searchIcon}/></View>
+        <View style={styles.welcomeTexts}>
+          <Text style={[styles.welcome, { color: theme.text }]}>Welcome back,</Text>
+          <Text style={[styles.username, { color: theme.text }]}>Golden Boy</Text>
+        </View>
+        <View style={styles.searchIconView}>
+          <Image source={require('../assets/search.png')} style={styles.searchIcon} />
+        </View>
       </View>
-      <Image source={require('../assets/Card.png')} style={styles.creditCard}/>
+      <Image source={require('../assets/Card.png')} style={styles.creditCard} />
       <View style={styles.transactionsView}>
         <View>
-        <View style={styles.send}>
-            <Image source={require('../assets/topIcon.png')} style={styles.transactionIcon}/>
-        </View>
-            <Text style={styles.sendText}>Send</Text>
-        </View>
-        <View>
-            <View style={styles.receive}>
-                <Image source={require('../assets/downIcon.png')} style={styles.transactionIcon}/>
-            </View>
-                <Text>Receive</Text>
+          <View style={styles.send}>
+            <Image source={require('../assets/topIcon.png')} style={styles.transactionIcon} />
+          </View>
+          <Text style={{color: theme.text, marginLeft: 10,}}>Send</Text>
         </View>
         <View>
-        <View style={styles.loan}>
-            <Image source={require('../assets/loan.png')} style={styles.transactionIcon}/>
-        </View>
-            <Text style={styles.loanText}>Loan</Text>
+          <View style={styles.receive}>
+            <Image source={require('../assets/downIcon.png')} style={styles.transactionIcon} />
+          </View>
+          <Text style={{color: theme.text}}>Receive</Text>
         </View>
         <View>
-            <View style={styles.topup}>
-                <Image source={require('../assets/topup.png')} style={styles.transactionIcon}/>
-            </View>
-                <View>
-                <Text style={styles.topupText}>Topup</Text>
-                </View>
+          <View style={styles.loan}>
+            <Image source={require('../assets/loan.png')} style={styles.transactionIcon} />
+          </View>
+          <Text style={{color: theme.text, marginLeft: 10}}>Loan</Text>
+        </View>
+        <View>
+          <View style={styles.topup}>
+            <Image source={require('../assets/topup.png')} style={styles.transactionIcon} />
+          </View>
+          <Text style={{color: theme.text}}>Topup</Text>
         </View>
       </View>
-        <View style={{flexDirection:'row', width: 300, justifyContent: 'space-between', marginTop: 30}}>
-            <Text style={{alignSelf:'flex-start', fontSize: 18, fontWeight: 'bold'}}>Transactions</Text>
-            <Text style={{alignSelf:'flex-end', color: 'blue', fontSize: 18, fontWeight:'400'}}>Sell All</Text>
+      <View style={{ flexDirection: 'row', width: 300, justifyContent: 'space-between', marginTop: 30 }}>
+        <Text style={{ alignSelf: 'flex-start', fontSize: 18, fontWeight: 'bold', color: theme.text }}>Transactions</Text>
+        <Text style={{ alignSelf: 'flex-end', color: theme.iconFocused, fontSize: 18, fontWeight: '400' }}>Sell All</Text>
+      </View>
+      <View>
+        <View style={{ flexDirection: 'row', marginTop: 15 }}>
+          <View style={{ backgroundColor: '#f5f5f5', borderRadius: 40, padding: 10, marginRight: 10 }}>
+            <Image source={require('../assets/apple.png')} style={{ width: 25, height: 25 }} />
+          </View>
+          <View style={{ width: 200 }}>
+            <Text style={{ fontWeight: '700', fontSize: 18, color: theme.text }}>Apple Store</Text>
+            <Text style={{ fontSize: 16, color: theme.text }}>Entertainment</Text>
+          </View>
+          <Text style={{ fontWeight: '700', marginTop: 10, fontSize: 16, color: theme.text }}>-$5.99</Text>
         </View>
-        <View>
-            <View style={{flexDirection: 'row', marginTop: 15}}>
-                <View style={{backgroundColor: '#f5f5f5', borderRadius: 40, padding: 10, marginRight: 10,}}>
-                    <Image source={require('../assets/apple.png')} style={{width:25, height:25, }}/>
-                </View>
-                <View style={{width:200}}>
-                    <Text style={{fontWeight:'700', fontSize:18}}>Apple Store</Text>
-                    <Text style={{fontSize: 14, fontSize:16}}>Entertainment</Text>
-                </View>
-                <Text style={{fontWeight:'700', marginTop:10, fontSize:16}}>-$5.99</Text>
+        <View style={{ flexDirection: 'row', marginTop: 15 }}>
+          <View style={{ backgroundColor: '#f5f5f5', borderRadius: 40, padding: 10, marginRight: 10 }}>
+            <Image source={require('../assets/spotify.png')} style={{ width: 25, height: 25 }} />
+          </View>
+          <View style={{ width: 200 }}>
+            <Text style={{ fontWeight: '700', fontSize: 18, color: theme.text }}>Spotify</Text>
+            <Text style={{ fontSize: 16, color: theme.text }}>Music</Text>
+          </View>
+          <Text style={{ fontWeight: '700', marginTop: 10, fontSize: 16, color: theme.text }}>-$12.99</Text>
         </View>
-            <View style={{flexDirection: 'row', marginTop: 15}}>
-                <View style={{backgroundColor: '#f5f5f5', borderRadius: 60, padding: 10, marginRight: 10,}}>
-                    <Image source={require('../assets/spotify.png')} style={{width:25, height:25, }}/>
-                </View>
-                <View style={{width:200}}>
-                    <Text style={{fontWeight:'700', fontSize:18}}>Spotify</Text>
-                    <Text style={{fontSize: 14, fontSize:16}}>Music</Text>
-                </View>
-                <Text style={{fontWeight:'700', marginTop:10,fontSize:16}}>-$12.99</Text>
+        <View style={{ flexDirection: 'row', marginTop: 15 }}>
+          <View style={{ backgroundColor: '#f5f5f5', borderRadius: 40, padding: 10, marginRight: 10 }}>
+            <Image source={require('../assets/download.png')} style={{ width: 25, height: 25 }} />
+          </View>
+          <View style={{ width: 200 }}>
+            <Text style={{ fontWeight: '700', fontSize: 18, color: theme.text }}>Money Transfer</Text>
+            <Text style={{ fontSize: 16, color: theme.text }}>Transaction</Text>
+          </View>
+          <Text style={{ fontWeight: '700', marginTop: 10, fontSize: 16, color: theme.text }}>$300</Text>
         </View>
-            <View style={{flexDirection: 'row', marginTop: 15}}>
-                <View style={{backgroundColor: '#f5f5f5', borderRadius: 60, padding: 10, marginRight: 10,}}>
-                    <Image source={require('../assets/download.png')} style={{width:25, height:25, }}/>
-                </View>
-                <View style={{width:200}}>
-                    <Text style={{fontWeight:'700', fontSize:18}}>Money Transfer</Text>
-                    <Text style={{fontSize: 14, fontSize:16}}>Transaction</Text>
-                </View>
-                <Text style={{fontWeight:'700', marginTop:10, fontSize:16, color:'blue'}}>$300</Text>
+        <View style={{ flexDirection: 'row', marginTop: 15 }}>
+          <View style={{ backgroundColor: '#f5f5f5', borderRadius: 40, padding: 10, marginRight: 10 }}>
+            <Image source={require('../assets/shopping-cart.png')} style={{ width: 25, height: 25 }} />
+          </View>
+          <View style={{ width: 200, marginBottom: 40, }}>
+            <Text style={{ fontWeight: '700', fontSize: 18, color: theme.text }}>Grocery</Text>
+            <Text style={{ fontSize: 16, color: theme.text }}>Life</Text>
+          </View>
+          <Text style={{ fontWeight: '700', marginTop: 10, fontSize: 16, color: theme.text }}>-$88</Text>
         </View>
-            <View style={{flexDirection: 'row', marginTop: 15}}>
-                <View style={{backgroundColor: '#f5f5f5', borderRadius: 60, padding: 10, marginRight: 10,}}>
-                    <Image source={require('../assets/shopping-cart.png')} style={{width:25, height:25, }}/>
-                </View>
-                <View style={{width:200}}>
-                    <Text style={{fontWeight:'700', fontSize:18}}>Shopping</Text>
-                    <Text style={{fontSize: 16,}}>Upkeep</Text>
-                </View>
-                <Text style={{fontWeight:'700', marginTop:10, fontSize:16}}>-$88</Text>
-        </View>
-            <View style={{flexDirection: 'row', marginTop: 15}}>
-                <View style={{backgroundColor: '#f5f5f5', borderRadius: 50, padding: 10, marginRight: 10,}}>
-                    <Image source={require('../assets/apple.png')} style={{width:25, height:25, }}/>
-                </View>
-                <View style={{width:200}}>
-                    <Text style={{fontWeight:'700', fontSize:18}}>Scorpion Co.</Text>
-                    <Text style={{fontSize: 16, fontSize:16}}>Scorpio's Share</Text>
-                </View>
-                <Text style={{fontWeight:'700', marginTop:10, fontSize:16}}>-$6.99</Text>
-            </View>
-        </View>
+        {/* Add more transactions similarly */}
+      </View>
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
    Header: {
     flexDirection: "row",
     justifyContent: 'flex-start',

@@ -1,21 +1,61 @@
-import { View, Text, Image } from 'react-native'
-import React from 'react'
+import React from 'react';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { useTheme, themes, } from '../ThemeContext';
+
 
 export default function Settings() {
+  const { theme, toggleTheme } = useTheme();
+  const isDarkMode = themes === theme.dark;
+  const black = '#000';
+  const white = '#fff';
+
   return (
-    <View style={{flex:1, alignItems: "center", justifyContent: "center",  paddingBottom:300, paddingLeft:20, paddingRight:20, backgroundColor:'#fff',}}>
-      <Text style={{fontSize: 30, fontWeight: '600', marginBottom: 50}}>Settings</Text>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: theme.background }}>
+      <Text style={{ fontSize: 30, fontWeight: '600', marginBottom: 50, color: theme.text }}>Settings</Text>
 
-      <View style={{borderWidth:2, borderTopColor:'white', borderRightColor:'white', borderLeftColor:'white', borderBottomColor:'#f5f5f5', width:'100%', marginBottom: 20, flexDirection:'row'}}><Text style={{fontSize: 20, fontWeight: '600', marginBottom: 10}}>Language</Text><Image source={require('../assets/right.png')} style={{width:20, height:20, marginTop:7, marginLeft: 230}}/></View>
-      <View style={{borderWidth:2, borderTopColor:'white', borderRightColor:'white', borderLeftColor:'white', borderBottomColor:'#f5f5f5', width:'100%', marginBottom: 20, flexDirection:'row'}}><Text style={{fontSize: 20, fontWeight: '600', marginBottom: 10}}>My Profile</Text><Image source={require('../assets/right.png')} style={{width:20, height:20, marginTop:7, marginLeft: 230}}/></View>
-      <View style={{borderWidth:2, borderTopColor:'white', borderRightColor:'white', borderLeftColor:'white', borderBottomColor:'#f5f5f5', width:'100%', marginBottom: 20, flexDirection:'row'}}><Text style={{fontSize: 20, fontWeight: '600', marginBottom: 10}}>Contact Us </Text><Image source={require('../assets/right.png')} style={{width:20, height:20, marginTop:7, marginLeft: 220}}/></View>
-      <View style={{borderWidth:2, borderTopColor:'white', borderRightColor:'white', borderLeftColor:'white', borderBottomColor:'#f5f5f5', width:'100%', marginBottom: 20, flexDirection:'row'}}><Text style={{fontSize: 20, fontWeight: '600', marginBottom: 10}}>Change Password </Text><Image source={require('../assets/right.png')} style={{width:20, height:20, marginTop:7, marginLeft: 160}}/></View>
-      <View style={{borderWidth:2, borderTopColor:'white', borderRightColor:'white', borderLeftColor:'white', borderBottomColor:'#f5f5f5', width:'100%', marginBottom: 30, flexDirection:'row'}}><Text style={{fontSize: 20, fontWeight: '600', marginBottom: 10}}>Privacy Policy </Text><Image source={require('../assets/right.png')} style={{width:20, height:20, marginTop:7, marginLeft: 200}}/></View>
-
-      <View style={{flexDirection:'row', width:'100%', marginTop: 30,}}>
-        <View style={{justifyContent:'flex-start', paddingTop: 20, marginRight: 180 }}><Text style={{fontSize: 30, fontWeight: '600'}}>Theme</Text></View>
-        <View style={{justifyContent:'flex-end'}}><Image source={require('../assets/off-button.png')} style={{width:80, height:80, }}/></View>
+      <View style={{ borderWidth: 2, borderColor: theme.background, width: '100%', marginBottom: 20, flexDirection: 'row' }}>
+        <Text style={{ fontSize: 20, fontWeight: '600', marginLeft: 20, marginRight: 205, color: theme.text }}>Language</Text>
+        <TouchableOpacity>
+          <Image source={require('../assets/right.png')} style={{ height: 20, width: 20, marginLeft: 'auto', marginRight: 30 }} />
+        </TouchableOpacity>
       </View>
+
+      <View style={{ borderWidth: 2, borderColor: theme.background, width: '100%', marginBottom: 20, flexDirection: 'row' }}>
+        <Text style={{ fontSize: 20, fontWeight: '600', marginLeft: 20, marginRight: 200, color: theme.text }}>My Profile</Text>
+        <TouchableOpacity>
+          <Image source={require('../assets/right.png')} style={{ height: 20, width: 20, marginLeft: 'auto', marginRight: 30 }} />
+        </TouchableOpacity>
+      </View>
+
+      <View style={{ borderWidth: 2, borderColor: theme.background, width: '100%', marginBottom: 20, flexDirection: 'row' }}>
+        <Text style={{ fontSize: 20, fontWeight: '600', marginLeft: 20, marginRight: 200, color: theme.text }}>Contact Us</Text>
+        <TouchableOpacity>
+          <Image source={require('../assets/right.png')} style={{ height: 20, width: 20, marginLeft: 'auto', marginRight: 30 }} />
+        </TouchableOpacity>
+      </View>
+      <View style={{ borderWidth: 2, borderColor: theme.background, width: '100%', marginBottom: 20, flexDirection: 'row' }}>
+        <Text style={{ fontSize: 20, fontWeight: '600', marginLeft: 20, marginRight: 140, color: theme.text }}>Change Password</Text>
+        <TouchableOpacity>
+          <Image source={require('../assets/right.png')} style={{ height: 20, width: 20, marginLeft: 'auto', marginRight: 30 }} />
+        </TouchableOpacity>
+      </View>
+      <View style={{ borderWidth: 2, borderColor: theme.background, width: '100%', marginBottom: 20, flexDirection: 'row' }}>
+        <Text style={{ fontSize: 20, fontWeight: '600', marginLeft: 20, marginRight: 180, color: theme.text }}>Privacy Policy</Text>
+        <TouchableOpacity>
+          <Image source={require('../assets/right.png')} style={{ height: 20, width: 20, marginLeft: 'auto', marginRight: 30 }} />
+        </TouchableOpacity>
+      </View>
+      
+
+      <TouchableOpacity onPress={toggleTheme} style={{ marginTop: 50, marginBottom: 250 }}>
+       <View style={{flexDirection: 'row'}}>
+        <Text style={{ fontSize: 20, fontWeight: '600', marginRight: 180, color:  isDarkMode ? white : black }}>Toggle Theme</Text>
+        <Image
+          source={isDarkMode ? require('../assets/on-button.png') : require('../assets/off-button.png')}
+          style={{ height: 40, width: 40, }}
+        />
+       </View> 
+      </TouchableOpacity>
     </View>
-  )
+  );
 }
